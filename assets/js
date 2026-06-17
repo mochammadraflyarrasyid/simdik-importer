@@ -1,0 +1,23 @@
+// Tombol modal
+function showModal(id) {
+    document.getElementById(id).style.display = "block";
+}
+
+function closeModal(id) {
+    document.getElementById(id).style.display = "none";
+}
+
+// Tutup modal saat klik luar
+window.onclick = function(event) {
+    const modals = document.getElementsByClassName('modal');
+    for(let modal of modals){
+        if(event.target == modal){
+            modal.style.display = "none";
+        }
+    }
+}
+
+// Tooltip simple untuk error data
+document.querySelectorAll('tr.error td').forEach(td => {
+    td.title = 'Data tidak valid, periksa kembali';
+});
